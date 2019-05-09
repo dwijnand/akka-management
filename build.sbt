@@ -27,7 +27,8 @@ lazy val `akka-management-root` = project
   )
   .settings(
     parallelExecution in GlobalScope := false,
-    publish / skip := true
+    resolvers in ThisBuild += Resolver.bintrayRepo("akka", "snapshots"),
+    publish / skip := true,
   )
 
 lazy val `akka-discovery-kubernetes-api` = project
